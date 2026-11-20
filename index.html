@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidade – Conferência Ticket PortoWeb × MIC</title>
+<style>
+  body { font: 16px/1.6 Arial, sans-serif; max-width: 780px; margin: 30px auto; padding: 0 16px; color: #222; }
+  h1 { font-size: 26px; color: #1d4f91; } h2 { font-size: 19px; margin-top: 28px; color: #1d4f91; }
+  code { background: #eef3f9; padding: 1px 5px; border-radius: 3px; }
+  .nota { background: #fff7e6; border-left: 4px solid #b9770e; padding: 8px 12px; }
+  a { color: #1d4f91; }
+</style>
+</head>
+<body>
+<h1>Política de Privacidade</h1>
+<p><strong>Extensão:</strong> Conferência Ticket PortoWeb × MIC<br>
+<strong>Responsável:</strong> Vitor Munhoz Moreira<br>
+<strong>Contato:</strong> <a href="mailto:vitormunhozmoreira@gmail.com">vitormunhozmoreira@gmail.com</a><br>
+<strong>Última atualização:</strong> 20 de novembro de 2026</p>
+
+<h2>1. O que a extensão faz</h2>
+<p>A extensão ajuda quem emite notas fiscais a conferir, na própria tela do sistema MIC, se os dados do formulário (cliente, pedido, transportadora, navio, produto, destino, placa e pesos) coincidem com o ticket de pesagem exibido no PortoWeb. Ela também mostra totais por navio comparando o MIC com o PortoWeb.</p>
+
+<h2>2. Quais dados são acessados</h2>
+<ul>
+  <li><strong>Conteúdo das páginas</strong> do sistema MIC (formulário de emissão e consulta de pedidos) e do PortoWeb (lista e ticket de pesagem), somente nos sites <code>*.micsistemas.com.br</code> e <code>portoweb.portosrs.com.br</code>.</li>
+  <li><strong>Credencial de sessão do PortoWeb</strong> (token de acesso que o próprio PortoWeb envia à sua API depois que o usuário faz login). Ela é usada apenas para consultar o ticket e os totais do navio na API do PortoWeb, em nome do próprio usuário. A extensão <strong>não vê nem guarda a senha</strong>.</li>
+  <li><strong>Relação de pedidos</strong>: uma lista (pedido, navio, produto, destino, cliente) que o usuário mantém numa planilha do Google e cujo link ele informa à extensão.</li>
+</ul>
+
+<h2>3. Onde os dados ficam</h2>
+<ul>
+  <li>A credencial de sessão fica <strong>somente na memória do navegador</strong> (<code>storage.session</code>) e é apagada ao fechar o Chrome.</li>
+  <li>A relação de pedidos, o link da planilha e preferências ficam <strong>no próprio navegador</strong> (<code>storage.local</code>), neste computador.</li>
+  <li>Os tickets (PDF) são lidos na hora para a comparação e não são armazenados.</li>
+</ul>
+
+<h2>4. Com quem os dados são compartilhados</h2>
+<p><strong>Com ninguém.</strong> A extensão não envia dados ao desenvolvedor nem a terceiros, não usa análise de uso, anúncios ou rastreadores, e não vende nem transfere dados. As únicas conexões são feitas pelo navegador do usuário para: (a) o PortoWeb e sua API; (b) o sistema MIC; (c) o Google Planilhas / Apps Script, para ler a relação de pedidos cujo link o usuário configurou.</p>
+
+<h2>5. Código remoto</h2>
+<p>A extensão não baixa nem executa código remoto. Da planilha do Google / Apps Script ela lê apenas dados (texto/CSV).</p>
+
+<h2>6. Controle do usuário</h2>
+<p>O usuário pode desligar a fonte online da relação no ícone da extensão, remover a extensão a qualquer momento (o que apaga os dados locais) e encerrar a sessão do PortoWeb no próprio site.</p>
+
+<h2>7. Segurança</h2>
+<p>As comunicações usam HTTPS. A extensão pede ao navegador apenas as permissões necessárias à sua finalidade.</p>
+
+<h2>8. Sem vínculo oficial</h2>
+<p class="nota">Esta é uma ferramenta independente. Não é um produto da Portos RS, do PortoWeb nem do sistema MIC. Os nomes são usados apenas para indicar com quais sistemas a extensão funciona.</p>
+
+<h2>9. Alterações e contato</h2>
+<p>Se esta política mudar, a data acima será atualizada. Dúvidas: <a href="mailto:vitormunhozmoreira@gmail.com">vitormunhozmoreira@gmail.com</a>.</p>
+
+<hr>
+<h2>English summary</h2>
+<p>This extension compares the weighing ticket shown in the PortoWeb site with the invoice-issuing form of the MIC system, and highlights mismatching fields. It reads page content only on <code>*.micsistemas.com.br</code> and <code>portoweb.portosrs.com.br</code>. It uses the PortoWeb session token (kept in memory only, never the password) to query PortoWeb's own API on behalf of the signed-in user. Settings and the user's order list stay in the browser's local storage. No data is sent to the developer or to third parties; there are no analytics, ads or remote code. Contact: vitormunhozmoreira@gmail.com.</p>
+</body>
+</html>
